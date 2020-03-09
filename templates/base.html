@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Computer Graphics Lab{% endblock %}</title>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <script src="{{ url_for('static', filename='jquery-3.4.1.slim.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}?{{ dt_now() }}">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            --primary-color: {{ primary_color }};
+            --secondary-color: {{ secondary_color }};
+            --accent-color: {{ accent_color }};
+            --accent-text-color: {{ accent_text_color }};
+            --btn-color: {{ btn_color }};
+            --author-color: {{ author_color }};
+        }
+    </style>
+
+    {% block styles %}
+    {% endblock %}
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+<header>
+    <div class="logo"><a href="{{ url_for('index') }}">Computer Graphics Labs</a> <span class="author">by {{ author }}</span></div>
+    {% include 'navigation.html' %}
+</header>
+<main>{% block content %}{% endblock %}</main>
+<footer></footer>
+</body>
+</html>
