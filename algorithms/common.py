@@ -12,6 +12,10 @@ def readb64(base64_string, format):
 
     return cv2.cvtColor(np.array(pimg), format)
 
+def readb64_v2(base64_string, format):
+    nparr = np.fromstring(base64.b64decode(base64_string), np.uint8)
+    return cv2.imdecode(nparr, format)
+
 def writeb64(img):
     retval, buffer = cv2.imencode('.jpg', img)
     return base64.b64encode(buffer)

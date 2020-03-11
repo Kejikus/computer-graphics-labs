@@ -37,6 +37,8 @@ def task_4(input_image: str, threshold: int, scale_multiplier_for_log: int, scal
         scale_multiplier_for_power: ...
 
         gamma: ...
+
+        debug: Shows image if `True`
         Returns:
         --------
         list with list of output images in Base64 string format
@@ -70,7 +72,7 @@ if __name__ == "__main__":
 
     step_value = 100
 
-    imagefile = "images\\test2.jpg"
+    imagefile = "algorithms\\images\\test.jpg"
 
     image_file = open(imagefile, "rb")
     encoded_string = base64.b64encode(image_file.read())
