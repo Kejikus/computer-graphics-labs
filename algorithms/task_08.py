@@ -58,7 +58,6 @@ def task_7(input_image: str, debug=False) -> list:
     arr = np.asarray(sum_img)
     grad_img = imadjust(arr, arr.min(), arr.max(), 0, 1)
 
-    # Добавить опреации между преобразованиями и вывести промежуточные варианты
 
     if debug:
         cv2.imshow('original image', img)
